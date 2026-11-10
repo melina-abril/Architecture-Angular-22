@@ -1,0 +1,30 @@
+// Colores, tipografía y espaciado del sistema. Tiene que definir TODAS estas variables: styles.scss y los
+// componentes las usan. Cámbialas por las de la guía de estilos del cliente.
+:root {
+  --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --color-primary: #17365d;
+  --color-on-primary: #ffffff;
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #e9eef4;
+  --color-text: #172536;
+  --color-text-muted: #506174;
+  --color-border: #c8d3df;
+  --color-focus: #e49a24;
+
+  --color-info: #1d5fa8;
+  --color-info-surface: #e8f1fb;
+  --color-success: #176848;
+  --color-success-surface: #e7f5ee;
+  --color-warning: #8a5a00;
+  --color-warning-surface: #fff4dc;
+  --color-danger: #a32132;
+  --color-danger-surface: #fff0f1;
+
+  --space-xs: 0.4rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --radius: 0.65rem;
+}
