@@ -1,8 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { APP_ROLES, APP_TITLE } from '../../app.navigation';
+import { APP_ROLES as SYSTEM_ROLES, APP_TITLE } from '../../app.navigation';
 import { CurrentUser } from '../session/current-user';
+import { AppRole } from './navigation.model';
+
+/** Tipo explícito: si el sistema no define roles (APP_ROLES = []), TypeScript infiere never[] y el build falla. */
+const APP_ROLES: readonly AppRole[] = SYSTEM_ROLES;
 
 @Component({
   selector: 'app-header',

@@ -2,9 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { Observable, catchError, firstValueFrom, map, of, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { APP_ROLES } from '../../app.navigation';
+import { APP_ROLES as SYSTEM_ROLES } from '../../app.navigation';
+import { AppRole } from '../layout/navigation.model';
 import { apiUrl } from '../http/api-url';
 import { mockError, mockResponse } from '../http/mock-response';
+
+/** Tipo explícito: si el sistema no define roles (APP_ROLES = []), TypeScript infiere never[] y el build falla. */
+const APP_ROLES: readonly AppRole[] = SYSTEM_ROLES;
 
 /** Usuario de la sesión: misma forma que SessionUserResponse del backend (POST /auth/login y GET /auth/me). */
 export interface SessionUser {

@@ -1,7 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { APP_NAVIGATION } from '../../app.navigation';
+import { APP_NAVIGATION as SYSTEM_NAVIGATION } from '../../app.navigation';
 import { CurrentUser } from '../session/current-user';
+import { NavigationItem } from './navigation.model';
+
+/** Tipo explícito: si el sistema no tiene links (APP_NAVIGATION = []), TypeScript infiere never[] y el build falla. */
+const APP_NAVIGATION: readonly NavigationItem[] = SYSTEM_NAVIGATION;
 
 @Component({
   selector: 'app-side-nav',
