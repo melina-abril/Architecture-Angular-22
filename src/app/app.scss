@@ -1,9 +1,12 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 .app-shell {
+  flex: 1;
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
   max-width: 100rem;
