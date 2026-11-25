@@ -1,0 +1,3 @@
+{
+  "remove": ["src/app/core/session/**"]
+}
