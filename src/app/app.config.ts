@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     // withSession: /login público y las rutas del sistema detrás de authGuard.
     // withComponentInputBinding: los parámetros de ruta (:id) y de query (?returnUrl) llegan como input() de la página.
-    provideRouter(withSession(routes), withComponentInputBinding(), withInMemoryScrolling({ scrollPositionRestoration: 'top' })),
+    provideRouter(withSession(routes), withComponentInputBinding(), withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' })),
     // apiErrorInterceptor envuelve a sessionExpiredInterceptor: este ve el 401 crudo antes de que se traduzca a ApiProblemError.
     provideHttpClient(withFetch(), withInterceptors([apiErrorInterceptor, sessionExpiredInterceptor])),
     // Recupera la sesión (GET /auth/me) antes de resolver la primera ruta.
